@@ -44,6 +44,10 @@ Release/
 *.sql
 Publications/2013-TMI/ACWE.bib
 *.pdf
+*.acn
+*.acr
+*.alg
+
 papers/FINF-ITK
 temp/
 Data/Phantom*
