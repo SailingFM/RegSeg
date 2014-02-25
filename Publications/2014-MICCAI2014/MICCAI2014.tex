@@ -84,23 +84,19 @@ In this work, we propose a simultaneous segmentation-registration
   method derived from \gls*{acwe} \cite{chan_active_2001}, that
   jointly overcomes the presented pitfalls.
 A free deformation field is implemented with a multi-resolution 
-  B-Spline transform model, that concatenates a certain number of 
-  levels --defined by increasing amount of control points--.
-Invertibility is ensured by keeping the maximum displacement under
-  the threshold of $0.40 \times [ s_x, s_y, s_z ]$, where $s_i$ are
-  the spacings between consecutive control points of each level
-  \cite{rueckert_diffeomorphic_2006}.
+  B-Spline diffeomorphic transform model, that concatenates a 
+  certain number of levels --defined by an increasing amount of points
+  forming the control grid--.
 Optimization strategy is steepest descent, using shape-gradients
   \cite{jehan-besson_dream2s:_2003} to avoid a levelset implementation,
   and keep the model close to the original surfaces extracted from
   anatomically correct data.
-These surfaces are obtained with \emph{FreeSurfer}\footnote{\url{http://...}},
-  to comply with the state of art procedures.
+These surfaces are obtained with \emph{FreeSurfer}\footnote{\url{http://...}}
+  on \gls*{t1} images, to comply with the state of art procedures.
 Regularization is performed on the deformation field, using anisotropic
   penalty terms that allow for favoring the phase-encoding direction.
-To test the validity of the method, we apply it to recover
-  a synthetic B-Spline deformation from multivariate and digital
-  phantoms.
+To assess the validity of the method, we apply it to recover
+  a synthetic B-Spline deformation from digital phantoms.
 Finally, we use an existing evaluation framework \cite{esteban_phantom_2014}
   to distort real \gls*{mri} data with real deformation fields derived
   from \gls*{dmri} data.
@@ -108,6 +104,11 @@ We also compare our results with an alternative tool based on \gls*{t2}
   registration.
   
 \section{Material and methods}\label{sec:methods}
+
+Invertibility is ensured by keeping the maximum displacement under
+  the threshold of $0.40 \times [ s_x, s_y, s_z ]$, where $s_i$ are
+  the spacings between consecutive control points of each level
+  \cite{rueckert_diffeomorphic_2006}.
 
 
 \bibliography{references}
