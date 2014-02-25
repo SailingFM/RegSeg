@@ -1,5 +1,9 @@
 \documentclass{llncs}
 
+\usepackage[acronym,nowarn]{glossaries}
+
+
+
 \title{Active contours-based registration method for correction of susceptibility distortion in MR images}
 \titlerunning{AC-based registration for EPI distortion correction}
 
@@ -10,6 +14,20 @@
         Andr\'es~Santos,
         and~Dominique~Zosso%
 }
+
+\newacronym{mri}{MRI}{magnetic resonance imaging}
+\newacronym{dmri}{dMRI}{diffusion MRI}
+\newacronym{epi}{EPI}{echo planar imaging}
+\newacronym{t1}{T1w}{T1-weighted}
+\newacronym{t2}{T2w}{T2-weighted}
+\newacronym{acwe}{ACWE}{active contours without edges}
+\newacronym{psf}{PSF}{point spread function}
+\newacronym[longplural=regions of interest]{roi}{ROI}{region of interest}
+\newacronym{wm}{WM}{white matter}
+
+% make sure this is after hyperref if present
+\makeglossary
+\glsdisablehyper
 
 \begin{document}
 \maketitle
@@ -33,7 +51,62 @@ diffusion MRI,~susceptibility~distortion,~segmentation,~registration,~parcellati
 \end{keywords}
 
 \section{Introduction}\label{sec:intro}
-
+\Gls*{dmri} is a widely used family of \gls*{mri} techniques which
+  accounts for growing interest in its applications to structural
+  connectivity analysis of the brain at the macro-scale.
+From \gls*{dmri} data, it is possible to derive the local axonal structure
+  at each imaging voxel, and estimate a whole-brain mapping of fiber
+  tracts represented by trajectories --and/or probability maps-- reconstructed
+  from the local information \cite{craddock_imaging_2013}.
+Currently, the connectome extraction and analysis relies on a large
+  chain of sophisticated computational methods including acquisition,
+  reconstruction, modeling and model fitting, image segmentation 
+  and registration, fibre tracking, connectivity mapping, visualization,
+  statistical analyses and inference.
+The artifact is generally present in \gls*{mri} using \gls*{epi} schemes,
+  and caused by variations on susceptibility at tissue interfaces.
+A major geometrical feature of the distortions is directionality, as it 
+  happens along the phase encoding direction.
+  
+The majority of methods published addressing the problem were
+  proposed during the development of  functional \gls*{mri}. 
+We refer the reader to Table S1 (Supplemental Material) for a
+  extended survey.
+However, the connectome extraction from \gls*{dmri} data requires
+  a more accurate geometrical correction as it provides for
+  structural information, and a highly precise \gls*{wm} segmentation
+  to reliably perform tractography.
+Susceptibility distortion has been recently proven a major source of
+  variability of resulting tractographies and connectomes
+  \cite{irfanoglu_effects_2012}.
+  
+In this work, we propose a simultaneous segmentation-registration
+  method derived from \gls*{acwe} \cite{chan_active_2001}, that
+  jointly overcomes the presented pitfalls.
+A free deformation field is implemented with a multi-resolution 
+  B-Spline transform model, that concatenates a certain number of 
+  levels --defined by increasing amount of control points--.
+Invertibility is ensured by keeping the maximum displacement under
+  the threshold of $0.40 \times [ s_x, s_y, s_z ]$, where $s_i$ are
+  the spacings between consecutive control points of each level
+  \cite{rueckert_diffeomorphic_2006}.
+Optimization strategy is steepest descent, using shape-gradients
+  \cite{jehan-besson_dream2s:_2003} to avoid a levelset implementation,
+  and keep the model close to the original surfaces extracted from
+  anatomically correct data.
+These surfaces are obtained with \emph{FreeSurfer}\footnote{\url{http://...}},
+  to comply with the state of art procedures.
+Regularization is performed on the deformation field, using anisotropic
+  penalty terms that allow for favoring the phase-encoding direction.
+To test the validity of the method, we apply it to recover
+  a synthetic B-Spline deformation from multivariate and digital
+  phantoms.
+Finally, we use an existing evaluation framework \cite{esteban_phantom_2014}
+  to distort real \gls*{mri} data with real deformation fields derived
+  from \gls*{dmri} data.
+We also compare our results with an alternative tool based on \gls*{t2}
+  registration.
+  
 \section{Material and methods}\label{sec:methods}
 
 
