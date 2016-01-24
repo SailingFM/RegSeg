@@ -1,0 +1,4 @@
+* Regseg is a surface-to-volume registration&segmentation method with subvoxel accuracy.
+* Regseg is applied in segmentation of dMRI scalars, jointly tackling EPI distortion.
+* Regseg enables structure-informed methods in connectome extraction pipelines.
+* Evaluated on dMRI multivariate-data, regseg overperformed b0-to-T2w registration.

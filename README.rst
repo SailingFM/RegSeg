@@ -9,6 +9,8 @@ The contours evolve through a free-form deformation field supported by the
 B-spline basis to optimally map the contours onto the data in the target
 space.
 
+.. image:: https://zenodo.org/badge/doi/10.5281/zenodo.17348.svg
+  :target: http://dx.doi.org/10.5281/zenodo.17348
 
 ----------------------
 Experimental framework
@@ -48,19 +50,19 @@ Credits
 Software
 --------
 
-https://github.com/oesteban/ACWE-Registration/graphs/contributors
+https://github.com/oesteban/RegSeg/graphs/contributors
 
 
 Contributions
 -------------
 
-* Oscar Esteban (@oesteban)
-* Dominique Zosso (@zosso)
-* Alessandro Daducci (@daducci)
-* Meritxell Bach-Cuadra (@meribach)
-* Andrés Santos Lleó (@asantos5)
-* Jean-Philippe Thiran (@thiran)
-* M.-J. Ledesma-Carbayo (@mledesmacarbayo)
+* Oscar Esteban (`@oesteban <https://github.com/oesteban>`_)
+* Dominique Zosso (`@zosso <https://github.com/zosso>`_)
+* Alessandro Daducci (`@daducci <https://github.com/daducci>`_)
+* Meritxell Bach-Cuadra (`@meribach <https://github.com/meribach>`_)
+* Andrés Santos Lleó (`@asantos5 <https://github.com/asantos5>`_)
+* Jean-Philippe Thiran (`@thiran <https://github.com/thiran>`_)
+* M.-J. Ledesma-Carbayo (`@mledesmacarbayo <https://github.com/mledesmacarbayo>`_)
 
 All the authors contributed to this study.
 OE implemented the method, designed and conducted the experiments, wrote the paper,
@@ -75,7 +77,13 @@ AD, MBC, MJLC, JPT, and AS advised on all aspects of the study.
 License
 -------
 
-RegSeg is free software: you can redistribute it and/or modify it under the terms of the [GNU General Public License](http://www.gnu.org/copyleft/gpl.html) as published by the [Free Software Foundation](http://www.fsf.org/), either version 3 of the License, or (at your option) any later version.
+RegSeg is free software: you can redistribute it and/or modify it under the terms of the
+`GNU General Public License <http://www.gnu.org/copyleft/gpl.html>`_ as published by the
+`Free Software Foundation <http://www.fsf.org/>`_, either version 3 of the License, or
+(at your option) any later version.
 
-RegSeg is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the [GNU General Public License](http://www.gnu.org/copyleft/gpl.html) for more details.
-You should have received a copy of [GNU General Public License](http://www.gnu.org/copyleft/gpl.html) along with RegSeg. If not, see [http://www.gnu.org/licenses/](http://www.gnu.org/licenses/).
+RegSeg is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the `GNU General Public License <http://www.gnu.org/copyleft/gpl.html>`_ for more details.
+You should have received a copy of `GNU General Public License <http://www.gnu.org/copyleft/gpl.html>`_
+along with RegSeg. If not, see http://www.gnu.org/licenses/.

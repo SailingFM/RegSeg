@@ -2,7 +2,7 @@
 // File:          FunctionalBaseTest.cxx
 // Date:          Jun 4, 2013
 // Author:        code@oscaresteban.es (Oscar Esteban)
-// Version:       1.0 beta
+// Version:       1.5.5
 // License:       GPLv3 - 29 June 2007
 // Short Summary:
 // --------------------------------------------------------------------------------------
@@ -11,7 +11,7 @@
 #include "gtest/gtest.h"
 
 #ifndef TEST_DATA_DIR
-#define TEST_DATA_DIR "/home/oesteban/workspace/ACWE-Reg/Data/Ellipse/"
+#define TEST_DATA_DIR "/home/oesteban/workspace/RegSeg/Data/Ellipse/"
 // data source http://code.google.com/p/v3dsolver/source/browse/data/
 #endif
 
